@@ -17,7 +17,7 @@ const NAV_LINKS = [
 
 export const Header = () => {
     return (
-        <header className="absolut flex items-center justify-center top-0 w-full z-10 h-24">
+        <header className="absolute top-0 z-10 h-24 w-full flex items-center justify-center">
             <div className="container flex items-center justify-between">
                 <Link href="/">
                     <Image
