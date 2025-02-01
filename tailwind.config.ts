@@ -9,14 +9,14 @@ export default {
   theme: {
     fontFamily: {
       sans: ['var(--font-inter)', 'sans-serif'],
-    }
-  },
-  extend: {
-    backgroundImage: {
-      'hero-image': "url('/images/hero-bg.png)",
     },
-    fontFamily: {
-      mono: ['var(--font-plex-mono)', 'monospace'],
+    extend: {
+      backgroundImage: {
+        'hero-image': "url('/images/hero-bg.png')",
+      },
+      fontFamily: {
+        mono: ['var(--font-plex-mono)', 'monospace'],
+      }
     },
   },
   plugins: [],
