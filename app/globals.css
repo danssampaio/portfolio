@@ -3,26 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  body{
-    @apply bg-gray-900 text-gray-100
+  body {
+    @apply bg-neutral-900 text-gray-100
   }
 }
 
-.container{
+.container {
   @apply mx-auto w-full max-w-[1200px] px-6
 }
 
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
   width: 8px;
 }
 
-*::-webkit-scrollbar-track{
-  background-color: #374151;
+*::-webkit-scrollbar-track {
+  background: #585858;
   border-radius: 5px;
 }
 
-*::-webkit-scrollbar{
-  
-  background-color: #10b981;
+*::-webkit-scrollbar-thumb {
+  background-color: #207dff;
   border-radius: 14px;
 }
