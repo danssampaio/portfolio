@@ -28,9 +28,21 @@ const CONTACTS = [
   },
 ];
 
+const TECHNOLOGIES = [
+  "HTML",
+  "CSS",
+  "Angular",
+  "Typescript",
+  "NodeJs",
+  "Java",
+  "Spring Boot",
+  "PostgreSQL",
+  "MySQL",
+];
+
 export const HeroSection = () => {
   return (
-    <section className="w-full lg:h-[755px] bg-hero-image bg-cover-bg-center bg-no-repeat flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
+    <section className="w-full lg:h-[755px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse md:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className="font-mono text-[#4894ff] sm:pt-5">
@@ -47,8 +59,8 @@ export const HeroSection = () => {
             omnis alias officiis fugiat ut quis repudiandae excepturi.
           </p>
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[530px]">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <TechBadge name="NextJs" />
+            {TECHNOLOGIES.map((tech, index) => (
+              <TechBadge key={index} name={tech} />
             ))}
           </div>
           <div className="flex mt-4 lg:mt-10 sm:items-center sm:gap-5 flex-col sm:flex-row ">

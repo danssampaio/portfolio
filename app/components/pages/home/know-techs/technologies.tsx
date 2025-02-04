@@ -1,43 +1,58 @@
-import { TbBrandNextjs } from "react-icons/tb";
+import {
+  TbBrandNextjs,
+  TbBrandCss3,
+  TbBrandHtml5,
+  TbBrandJavascript,
+  TbBrandTypescript,
+  TbBrandBootstrap,
+  TbBrandTailwind,
+  TbBrandAngular,
+  TbBrandReact,
+  TbBrandNodejs,
+  TbBrandMysql,
+} from "react-icons/tb";
+import { SiExpress, SiPostgresql } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import { BiLogoSpringBoot } from "react-icons/bi";
 
 export const technologies = [
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandHtml5 />,
     name: "HTML5",
     startDate: "2020-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandCss3 />,
     name: "CSS3",
     startDate: "2020-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandJavascript />,
     name: "Javascript",
     startDate: "2020-09-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandTypescript />,
     name: "Typescript",
     startDate: "2023-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandBootstrap />,
     name: "Bootstrap",
     startDate: "2020-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandTailwind />,
     name: "Tailwind",
     startDate: "2023-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandAngular />,
     name: "Angular",
     startDate: "2024-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandReact />,
     name: "React",
     startDate: "2024-02-03",
   },
@@ -47,32 +62,32 @@ export const technologies = [
     startDate: "2024-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandNodejs />,
     name: "NodeJs",
     startDate: "2024-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <SiExpress />,
     name: "Express",
     startDate: "2024-02-03",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <FaJava />,
     name: "Java",
     startDate: "2023-10-08",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <BiLogoSpringBoot />,
     name: "Spring Boot",
     startDate: "2023-10-08",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <TbBrandMysql />,
     name: "MySQL",
     startDate: "2023-10-08",
   },
   {
-    icon: <TbBrandNextjs />,
+    icon: <SiPostgresql />,
     name: "PostgreSQL",
     startDate: "2023-02-03",
   },
