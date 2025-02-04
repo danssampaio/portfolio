@@ -4,7 +4,7 @@ import { technologies } from "@/app/components/pages/home/know-techs/technologie
 
 export const KnowTechs = () => {
   return (
-    <section className="container py-16">
+    <section className="container">
       <SectionTitle subtitle="competências" title="Conhecimentos" />
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(225px,1fr))] gap-4">
