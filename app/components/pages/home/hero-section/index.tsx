@@ -28,9 +28,21 @@ const CONTACTS = [
   },
 ];
 
+const TECHNOLOGIES = [
+  "HTML",
+  "CSS",
+  "Angular",
+  "Typescript",
+  "NodeJs",
+  "Java",
+  "Spring Boot",
+  "PostgreSQL",
+  "MySQL",
+];
+
 export const HeroSection = () => {
   return (
-    <section className="w-full lg:h-[755px] bg-hero-image bg-cover-bg-center bg-no-repeat flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
+    <section className="w-full lg:h-[755px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse md:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className="font-mono text-[#4894ff] sm:pt-5">
@@ -38,17 +50,16 @@ export const HeroSection = () => {
           </p>
           <h2 className="text-4xl font-medium mt-2">Dan Souza</h2>
           <p className="text-gray-400 text-justify my-6 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-            dolore. Autem quasi molestiae laudantium in! Voluptate facilis cum
-            reprehenderit obcaecati molestias iste ipsa, quis voluptas, laborum,
-            dicta quia ab eius! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Ratione neque molestiae debitis explicabo odit
-            asperiores temporibus perferendis eos, porro nisi ex dignissimos
-            omnis alias officiis fugiat ut quis repudiandae excepturi.
+            Sou desenvolvedor web full stack, com foco no front-end, apaixonado
+            por criar interfaces intuitivas, funcionais e acessíveis. Formado em
+            Ciência da Computação, tenho experiência em desenvolvimento de
+            aplicações responsivas e interativas, sempre buscando a melhor
+            experiência para o usuário. Comunicativo e proativo, gosto de
+            transformar ideias em soluções eficientes e visualmente atraentes.
           </p>
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[530px]">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <TechBadge name="NextJs" />
+            {TECHNOLOGIES.map((tech, index) => (
+              <TechBadge key={index} name={tech} />
             ))}
           </div>
           <div className="flex mt-4 lg:mt-10 sm:items-center sm:gap-5 flex-col sm:flex-row ">
@@ -72,7 +83,7 @@ export const HeroSection = () => {
           </div>
         </div>
         <Image
-          className="w-[300px] h-[300px] lg:w-[320px] lg:h-[304px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover m-2 "
+          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl mt-12 rounded-lg object-cover m-2 "
           width={320}
           height={304}
           src="/images/profile-pic.jpg"
