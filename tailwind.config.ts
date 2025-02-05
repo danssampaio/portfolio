@@ -7,18 +7,16 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    theme:{
-      fontFamily:{
-        sans: ['var(--font-inter)', 'sans-serif'],
-      }
+    fontFamily: {
+      sans: ['var(--font-inter)', 'sans-serif'],
     },
     extend: {
-      backgroundImage:{
-        'hero-image': "url('/images/hero-bg.png)",
+      backgroundImage: {
+        'hero-image': "url('/images/hero-bg.png')",
       },
-      fontFamily:{
+      fontFamily: {
         mono: ['var(--font-plex-mono)', 'monospace'],
-      },
+      }
     },
   },
   plugins: [],
