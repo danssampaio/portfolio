@@ -26,12 +26,12 @@ export const ProjectCard = () => {
           Site Pró-Reitoria de Extensão da Universidade Estadual de Santa Cruz
         </h3>
         <p className="text-neutral-400 my-6">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, earum
-          obcaecati quo ducimus, commodi nesciunt debitis quis itaque corporis
-          iusto eaque possimus eveniet, corrupti perspiciatis! Voluptas, tenetur
-          molestiae. Quibusdam, blanditiis. Necessitatibus illo iure quos fugiat
-          rem, veritatis ad, totam praesentium natus, dolorem eos aliquam maxime
-          doloremque earum fugit nulla velit.
+          Plataforma informativa para a divulgação de projetos, eventos,
+          notícias e ações de extensão universitária, estruturada para oferecer
+          acesso rápido a documentos relacionados às certificações e criação de
+          projetos. Contribuí para a otimização da experiência do usuário e a
+          organização do conteúdo, garantindo uma navegação intuitiva e
+          eficiente.
         </p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[800px]">
           <TechBadge name="HTML" />
