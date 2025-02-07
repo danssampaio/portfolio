@@ -1,9 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="130" viewBox="0 20 120 160">
-  <text x="5" y="130" font-family="Arial, sans-serif" font-size="100" fill="#0053c8" font-weight="bold">
-    D
-  </text>
-  
-  <text x="55" y="140" font-family="Arial, sans-serif" font-size="100" fill="#4894ff" font-weight="bold">
-    S
-  </text>
+<svg width="290.94" height="315.08" viewBox="0 0 264 285.9" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1">
+      <stop stop-color="#179f91" offset="0"></stop>
+      <stop stop-color="#1effff" offset="1"></stop>
+    </linearGradient>
+    <linearGradient id="gradient2">
+      <stop stop-color="#147d6c" offset="0"></stop>
+      <stop stop-color="#1bc6c6" offset="1"></stop>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1.1,0,0,1.1,-5.5,1)" fill="url(#gradient1)">
+    <path fill-rule="evenodd" d="M5,65 L125,0 L245,65 L125,10z M5,179 L125,259 L245,174 L125,249z"></path>
+  </g>
+  <g transform="matrix(2.2645,0,0,2.2645,2.9239,79.9022)" fill="url(#gradient2)">
+    <path d="M18.48 20.76l0 5.4-8.48 4.24 8.48 4.16 0 5.44-16.68-8.72 0-1.8zM32.28 12c7.96 0 14.2 6.24 14.2 13.84 0 7.92-6.24 14.16-14.2 14.16l-10 0 0-28 10 0zM32.24 34.48c5.36 0 8.24-3.88 8.24-8.64 0-4.44-2.88-8.32-8.24-8.32l-4.12 0 0 16.96 4.12 0zM59.64 11.52c4.92 0 8.04 3.08 9.52 5.8l-4.32 2.56c-1.52-2.12-3-3.2-5.2-3.2-1.96 0-3.4 1.16-3.4 2.76s0.92 2.44 3.12 3.24l1.92 0.68c6.2 2.2 8.64 4.96 8.64 8.8 0 5.64-5.36 8.44-10.12 8.44-5.04 0-8.96-3-10.32-6.92l4.48-2.36c1 2.04 2.68 4 5.84 4 2.28 0 4.04-1 4.04-3.08 0-2-1.2-2.88-4.24-4.04l-1.72-0.6c-4.12-1.48-7.44-3.52-7.44-8.4 0-4.48 4.2-7.68 9.2-7.68zM92.52 10.2l-13.6 35-6 0 13.6-35 6 0zM95.52 20.76l16.68 8.72 0 1.8-16.68 8.72 0-5.44 8.48-4.16-8.48-4.24 0-5.4z"></path>
+  </g>
 </svg>
