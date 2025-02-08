@@ -1,3 +1,5 @@
+"use client";
+
 import { SectionTitle } from "@/app/components/section-title";
 import { KnowTech } from "./know-tech";
 import { technologies } from "@/app/components/pages/home/know-techs/technologies";

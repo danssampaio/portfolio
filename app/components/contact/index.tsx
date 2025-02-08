@@ -25,7 +25,10 @@ export const Contact = () => {
   };
 
   return (
-    <section className="container py-16 px-6 md:py-34 flex items-center justify-center bg-neutral-850">
+    <section
+      id="contact"
+      className="container py-16 px-6 md:py-34 flex items-center justify-center bg-neutral-850"
+    >
       <div className="w-full max-w-[420px] mx-auto">
         <SectionTitle
           className="items-center text-center"

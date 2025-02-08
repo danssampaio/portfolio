@@ -8,7 +8,7 @@ import { WorkExperience } from "./components/pages/home/work-experience";
 export default function Home() {
   return (
     <>
-      <div className="bg-hero-image bg-fixed">
+      <div className="bg-hero-image bg-cover bg-fixed bg-no-repeat">
         <HeroSection />
         <KnowTechs />
         <HighlightedProjects />

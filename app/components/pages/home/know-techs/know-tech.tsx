@@ -1,3 +1,6 @@
+"use client";
+
+
 import { getRelativeTimeString } from "@/app/utils/get-relative-time";
 import { ReactNode, useEffect, useState } from "react";
 

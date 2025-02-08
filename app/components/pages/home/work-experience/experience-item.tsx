@@ -1,3 +1,5 @@
+"use client";
+
 import { TechBadge } from "@/app/components/tech-bagde";
 import Image from "next/image";
 

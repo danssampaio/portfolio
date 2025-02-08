@@ -9,7 +9,7 @@
 }
 
 .container {
-  @apply mx-auto w-full max-w-[1200px] px-14
+  @apply mx-auto w-full max-w-[1280px] px-14
 }
 
 *::-webkit-scrollbar {
@@ -22,6 +22,6 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #4894ff;
+  background-color: #1effff;
   border-radius: 14px;
 }

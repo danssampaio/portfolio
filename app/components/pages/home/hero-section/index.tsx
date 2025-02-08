@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/app/components/buton";
 import { TechBadge } from "@/app/components/tech-bagde";
 import Image from "next/image";
@@ -41,11 +43,18 @@ const TECHNOLOGIES = [
 ];
 
 export const HeroSection = () => {
+  const HandleContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="w-full lg:h-[755px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse md:flex-row">
         <div className="w-full lg:max-w-[530px]">
-          <p className="font-mono text-[#4894ff] sm:pt-5">
+          <p className="font-mono text-[#1effff] sm:pt-5">
             Olá pessoas, meu nome é{" "}
           </p>
           <h2 className="text-4xl font-medium mt-2">Dan Souza</h2>
@@ -63,7 +72,7 @@ export const HeroSection = () => {
             ))}
           </div>
           <div className="flex mt-4 lg:mt-10 sm:items-center sm:gap-5 flex-col sm:flex-row ">
-            <Button className="w-max">
+            <Button onClick={HandleContact} className="w-max">
               Entre em contato
               <HiArrowNarrowRight size={18} />
             </Button>
@@ -86,6 +95,7 @@ export const HeroSection = () => {
           className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl mt-12 rounded-lg object-cover m-2 "
           width={320}
           height={304}
+          priority
           src="/images/profile-pic.jpg"
           alt="Minha Foto"
         />

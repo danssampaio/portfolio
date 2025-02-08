@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+
+import { Link } from "@/app/components/link";
 import { ProjectCard } from "./project-card";
 
 export const ProjectsList = () => {
