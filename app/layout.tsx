@@ -4,6 +4,7 @@ import { Header } from "./components/header";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import { Contact } from "./components/contact";
 import { Footer } from "./components/footer";
+import { BackToTop } from "./components/back-to-top";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +34,7 @@ export default function RootLayout({
         {children}
         <Contact />
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
