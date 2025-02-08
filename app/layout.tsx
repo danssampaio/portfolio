@@ -2,6 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Header } from "./components/header";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Contact } from "./components/contact";
+import { Footer } from "./components/footer";
+import { BackToTop } from "./components/back-to-top";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,6 +32,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${plexMono.variable}`}>
         <Header />
         {children}
+        <Contact />
+        <Footer />
+        <BackToTop />
       </body>
     </html>
   );
