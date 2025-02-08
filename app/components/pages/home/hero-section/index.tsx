@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/buton";
+import { Button } from "@/app/components/button";
 import { TechBadge } from "@/app/components/tech-bagde";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";

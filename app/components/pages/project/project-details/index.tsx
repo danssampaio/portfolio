@@ -2,7 +2,7 @@
 
 
 import { TbBrandGithub } from "react-icons/tb";
-import { Button } from "../../../buton";
+import { Button } from "../../../button";
 import { SectionTitle } from "../../../section-title";
 import { TechBadge } from "../../../tech-bagde";
 import { FiGlobe } from "react-icons/fi";
