@@ -22,12 +22,13 @@ const getPageData = async (): Promise<HomePageData> => {
         url
         iconSvg
       }
-      knownTechs {
+      knownTechs(first: 100) {
         iconSvg
         name
         startDate
       }
     }
+      
   }
 `;
 
@@ -41,7 +42,7 @@ export default async function Home() {
     <>
       <div className="bg-hero-image bg-cover bg-fixed bg-no-repeat">
         <HeroSection homeInfo={pageData} />
-        <KnowTechs />
+        <KnowTechs techs={pageData.knownTechs}/>
         <HighlightedProjects />
         <WorkExperience />
       </div>
