@@ -22,7 +22,7 @@ const getPageData = async (): Promise<HomePageData> => {
         url
         iconSvg
       }
-      knownTechs {
+      knownTechs (first: 30) {
         iconSvg
         name
         startDate
@@ -39,6 +39,22 @@ const getPageData = async (): Promise<HomePageData> => {
         }
       }
     }
+    workExperiences(orderBy: startDate_DESC){
+      companyName
+      companyUrl
+      companyLogo{
+        url
+      }
+      role
+      description{
+        raw
+      }
+      technologies{
+        name
+      }
+      startDate
+      endDate
+    }
   }
 `;
 
@@ -46,14 +62,14 @@ const getPageData = async (): Promise<HomePageData> => {
 };
 
 export default async function Home() {
-  const { page: pageData } = await getPageData();
+  const { page: pageData,  workExperiences } = await getPageData();
   return (
     <>
       <div className="bg-hero-image bg-cover bg-fixed bg-no-repeat">
         <HeroSection homeInfo={pageData} />
         <KnowTechs techs={pageData.knownTechs} />
         <HighlightedProjects projects={pageData.highlightProjects} />
-        <WorkExperience />
+        <WorkExperience experiences={workExperiences}/>
       </div>
     </>
   );
