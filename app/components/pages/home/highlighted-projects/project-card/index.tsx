@@ -4,14 +4,19 @@ import { TechBadge } from "@/app/components/tech-bagde";
 import Image from "next/image";
 import { Link } from "@/app/components/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { Project } from "@/app/types/projects";
 
-export const ProjectCard = () => {
+type ProjectCardProps = {
+  project: Project;
+};
+
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row">
       <div className="w-full h-full">
         <Image
-          alt="thumbnail do site da pró-reitoria de extensão uesc"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqN3wWXAui-0ecpu9l47AgL6YCb53cYIqp_Q&s"
+          src={project.thumbnail.url}
+          alt={`Thumbnail do projeto ${project.title}`}
           width={320}
           height={304}
           className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full object-cover rounded-lg"
@@ -26,24 +31,18 @@ export const ProjectCard = () => {
             height={0}
             style={{ width: "35px", height: "35px" }}
           />
-          Site Pró-Reitoria de Extensão da Universidade Estadual de Santa Cruz
+          {project.title}
         </h3>
-        <p className="text-neutral-400 my-6">
-          Plataforma informativa para a divulgação de projetos, eventos,
-          notícias e ações de extensão universitária, estruturada para oferecer
-          acesso rápido a documentos relacionados às certificações e criação de
-          projetos. Contribuí para a otimização da experiência do usuário e a
-          organização do conteúdo, garantindo uma navegação intuitiva e
-          eficiente.
-        </p>
+        <p className="text-neutral-400 my-6">{project.shortDescription}</p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[800px]">
-          <TechBadge name="HTML" />
-          <TechBadge name="CSS" />
-          <TechBadge name="Bootstrap" />
-          <TechBadge name="Javascript" />
-          <TechBadge name="PHP" />
+          {project.technologies.map((tech) => (
+            <TechBadge
+              key={`${project.title}-tech-${tech.name}`}
+              name={tech.name}
+            />
+          ))}
         </div>
-        <Link href="/projects/proex-uesc">
+        <Link href={`/projects/${project.slug}`}>
           Ver Projeto
           <HiArrowNarrowRight />
         </Link>
