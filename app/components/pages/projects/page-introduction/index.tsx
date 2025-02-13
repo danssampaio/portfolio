@@ -14,14 +14,13 @@ export const PageIntroduction = () => {
       />
       <div className="flex flex-col items-center">
         <p className="text-neutral-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          fugiat quisquam optio dicta accusamus officiis consequatur mollitia
-          ipsa ipsam natus? Consequatur id debitis maxime praesentium delectus
-          nulla nihil voluptate deserunt.
+          Aqui você encontrará uma seleção dos meus projetos. Cada um deles reflete minha jornada
+          de aprendizado, experimentação, trabalho e aprimoramento contínuo. Sinta-se à
+          vontade para explorar e conhecer mais sobre meu trabalho.
         </p>
         <Link href="/">
-            <HiArrowNarrowLeft/>
-            Voltar para Home        
+          <HiArrowNarrowLeft />
+          Voltar para Home
         </Link>
       </div>
     </section>
