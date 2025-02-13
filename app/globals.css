@@ -9,7 +9,7 @@
 }
 
 .container {
-  @apply mx-auto w-full max-w-[1280px] px-14
+  @apply mx-auto w-full max-w-[1080px] px-14
 }
 
 *::-webkit-scrollbar {
