@@ -50,7 +50,7 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
 };
 
 export default async function Project({ params }: ProjectProps) {
-  const param = params;
+  const param = await params;
   const { project } = await getProjectDetails(param.slug);
 
   if (!project?.title) return notFound();
@@ -83,7 +83,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ProjectProps): Promise<Metadata> {
-  const param = params;
+  const param = await params;
   const data = await getProjectDetails(param.slug);
   const project = data.project;
 
