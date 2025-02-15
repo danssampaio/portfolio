@@ -18,8 +18,15 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfólio",
-  description: "Portfólio",
+  title: {
+    default: "Home",
+    template: "%s | <DS/>"
+  },
+  icons: [
+    {
+      url: '/favicon.svg'
+    }
+  ]
 };
 
 export default function RootLayout({
