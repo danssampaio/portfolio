@@ -16,42 +16,45 @@ type ProjectProps = {
 
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
-    query ProjectQuery {
-      project(where: {slug: "${slug}"}) {
-        pageThumbnail {
-          url
-        }
-        thumbnail {
-          url
-        }
-        sections {
-          title
-          description
-          image {
-            url
-          }
-        }
-        title
-        shortDescription
-        description {
-          raw
-          text
-        }
-        technologies {
-          name
-        }
-        liveProjectUrl
-        githubUrl
+  query ProjectQuery {
+    project(where: {slug: "${slug}"}) {
+      pageThumbnail {
+        url
       }
+      thumbnail {
+        url
+      }
+      sections {
+        title
+        image {
+          url
+        }
+      }
+      title
+      shortDescription
+      description {
+        raw
+        text
+      }
+      technologies {
+        name
+      }
+      liveProjectUrl
+      githubUrl
     }
-    `;
+  }
+  `;
+  const data = fetchHygraphQuery<ProjectPageData>(
+    query,
+    1000 * 60 * 60 * 24 
+  );
 
-  return fetchHygraphQuery<ProjectPageData>(query, 1000 * 60 * 60 * 24);
+  return data;
 };
 
 export default async function Project({ params }: ProjectProps) {
-  const param = await params;
-  const { project } = await getProjectDetails(param.slug);
+  const { slug } = await params;
+  const { project } = await getProjectDetails(slug);
 
   if (!project?.title) return notFound();
 
@@ -66,16 +69,12 @@ export default async function Project({ params }: ProjectProps) {
 export async function generateStaticParams() {
   const query = `
     query ProjectsSlugsQuery {
-      projects(first: 100){
+      projects(first: 100) {
         slug
       }
     }
   `;
-
-  const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(
-    query,
-    1000 * 60 * 60 * 24
-  );
+  const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query);
 
   return projects;
 }
@@ -83,8 +82,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ProjectProps): Promise<Metadata> {
-  const param = await params;
-  const data = await getProjectDetails(param.slug);
+  const { slug } = await params;
+  const data = await getProjectDetails(slug);
   const project = data.project;
 
   return {
