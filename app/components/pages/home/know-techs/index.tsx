@@ -1,15 +1,24 @@
+"use client";
+
 import { SectionTitle } from "@/app/components/section-title";
 import { KnowTech } from "./know-tech";
-import { technologies } from "@/app/components/pages/home/know-techs/technologies";
+import { HorizontalDivider } from "@/app/components/divider";
+import { KnownTech as IKnownTech} from "@/app/types/projects";
 
-export const KnowTechs = () => {
+type KnownTechsProps = {
+  techs: IKnownTech[];
+};
+
+
+export const KnowTechs = ({ techs }: KnownTechsProps) => {
   return (
     <section className="container">
       <SectionTitle subtitle="competências" title="Conhecimentos" />
+      <HorizontalDivider className="mb-16"/>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(225px,1fr))] gap-4">
-        {technologies.map((tech, index) => (
-          <KnowTech key={index} tech={tech} />
+        {techs?.map((tech) => (
+          <KnowTech key={tech.name} tech={tech} />
         ))}
       </div>
     </section>
