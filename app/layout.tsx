@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${plexMono.variable}`}>
+      <body className={`${inter.variable} ${plexMono.variable} bg-hero-image bg-cover bg-fixed bg-no-repeat`}>
         <Toaster />
         <Header />
         {children}

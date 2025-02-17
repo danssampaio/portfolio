@@ -25,7 +25,7 @@ const getPageData = async (): Promise<HomePageData> => {
       knownTechs (first: 30) {
         iconSvg
         name
-        startDate
+        experienceTime
       }
       highlightProjects {
         slug
@@ -62,15 +62,13 @@ const getPageData = async (): Promise<HomePageData> => {
 };
 
 export default async function Home() {
-  const { page: pageData,  workExperiences } = await getPageData();
+  const { page: pageData, workExperiences } = await getPageData();
   return (
     <>
-      <div className="bg-hero-image bg-cover bg-fixed bg-no-repeat">
-        <HeroSection homeInfo={pageData} />
-        <KnowTechs techs={pageData.knownTechs} />
-        <HighlightedProjects projects={pageData.highlightProjects} />
-        <WorkExperience experiences={workExperiences}/>
-      </div>
+      <HeroSection homeInfo={pageData} />
+      <KnowTechs techs={pageData.knownTechs} />
+      <HighlightedProjects projects={pageData.highlightProjects} />
+      <WorkExperience experiences={workExperiences} />
     </>
   );
 }

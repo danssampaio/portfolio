@@ -11,7 +11,6 @@ export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
     <section className="container flex flex-col md:flex-row py-16 gap-10 md:gap-4 lg:gap-16">
       <div className="max-w-[420px]">
         <SectionTitle
-          subtitle="experiências"
           title="Experiência Profissional"
         />
         <p className="text-neutral-400 mt-6 text-justify">

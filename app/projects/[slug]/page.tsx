@@ -9,9 +9,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type ProjectProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
@@ -48,20 +48,6 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
 
   return fetchHygraphQuery<ProjectPageData>(query, 1000 * 60 * 60 * 24);
 };
-
-export default async function Project({ params }: ProjectProps) {
-  const param = await params;
-  const { project } = await getProjectDetails(param.slug);
-
-  if (!project?.title) return notFound();
-
-  return (
-    <>
-      <ProjectDetails project={project} />
-      <ProjectSections projectSections={project.sections} />
-    </>
-  );
-}
 
 export async function generateStaticParams() {
   const query = `
@@ -100,4 +86,18 @@ export async function generateMetadata({
       ],
     },
   };
+}
+
+export default async function Project({ params }: ProjectProps) {
+  const param = await params;
+  const { project } = await getProjectDetails(param.slug);
+
+  if (!project?.title) return notFound();
+
+  return (
+    <>
+      <ProjectDetails project={project} />
+      <ProjectSections projectSections={project.sections} />
+    </>
+  );
 }

@@ -6,17 +6,25 @@ import { HiArrowNarrowLeft } from "react-icons/hi";
 
 export const PageIntroduction = () => {
   return (
-    <section className="flex flex-col items-center justify-center px-2 w-full h-[450px] lg:h-[630px] bg-hero-iamge bg-cover">
+    <section className="flex flex-col items-center justify-center px-2 w-full h-[450px] lg:h-[630px]">
       <SectionTitle
         className="text-center items-center [&>h3]:text-4xl"
-        subtitle="projects"
         title="Meus Projetos"
       />
       <div className="flex flex-col items-center">
         <p className="text-neutral-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Aqui você encontrará uma seleção dos meus projetos. Cada um deles reflete minha jornada
-          de aprendizado, experimentação, trabalho e aprimoramento contínuo. Sinta-se à
-          vontade para explorar e conhecer mais sobre meu trabalho.
+          Aqui você encontrará alguns projetos em que atuei nos últimos anos.
+          Cada um deles é um marco da minha jornada profissional, desde o início
+          de minhas explorações com desenvolvimento front-end até a construção
+          de soluções completas em back-end. Sinta-se à vontade para explorar,
+          aprender sobre as tecnologias utilizadas e conhecer mais sobre minha
+          trajetória como desenvolvedor.
+          <br />
+          <br />
+          Alguns projetos em que atuei não estarão aqui, por questão de
+          armazenamento em outras plataformas a quais não tenho acesso, ou já
+          não estão mais em uso, pois foram criados para se utilizar somente uma
+          ocasião específica.
         </p>
         <Link href="/">
           <HiArrowNarrowLeft />

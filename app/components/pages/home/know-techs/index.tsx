@@ -13,7 +13,7 @@ type KnownTechsProps = {
 export const KnowTechs = ({ techs }: KnownTechsProps) => {
   return (
     <section className="container">
-      <SectionTitle subtitle="competências" title="Conhecimentos" />
+      <SectionTitle title="Conhecimentos" />
       <HorizontalDivider className="mb-16"/>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(225px,1fr))] gap-4">
