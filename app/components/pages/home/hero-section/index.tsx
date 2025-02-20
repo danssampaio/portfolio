@@ -25,7 +25,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
       <div className="container flex items-start justify-between flex-col-reverse md:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className="font-mono text-[#1effff] sm:pt-5">
-            Olá pessoas, meu nome é
+            Olá, meu nome é
           </p>
           <h2 className="text-4xl font-medium mt-2">Darley(Dan) Souza</h2>
           <div className="text-gray-400 text-justify my-6 text-sm sm:text-base">
