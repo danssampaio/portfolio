@@ -36,14 +36,21 @@ export const Contact = () => {
   const submitForm = async (data: ContactFormData) => {
     try {
       await axios.post("/api/contact", data);
-      toast.success(
-        "Mensagem enviada com sucesso!!\nResponderei o mais breve possível."
-      );
       reset();
-    } catch {
-      toast.error(
-        "Erro ao enviar a mensagem.\nSe o erro persistir, tente mais tarde."
-      );
+      return toast.success("Mensagem enviada com sucesso!!\nResponderei o mais breve possível.");
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        const { status, data } = error.response;
+        if (status === 400 && data.errors) {
+          data.errors.forEach((err: { message: string }) => {
+            return toast.error(err.message);
+          });
+        }
+        return toast.error(
+          "Erro ao enviar a mensagem. Tente novamente mais tarde."
+        );
+      }
+      return toast.error("Erro inesperado.");
     }
   };
 
