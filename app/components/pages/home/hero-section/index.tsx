@@ -25,7 +25,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
       <div className="container flex items-start justify-between flex-col-reverse md:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className="font-mono text-[#1effff] sm:pt-5">
-            Olá pessoas, meu nome é
+            Olá, meu nome é
           </p>
           <h2 className="text-4xl font-medium mt-2">Darley(Dan) Souza</h2>
           <div className="text-gray-400 text-justify my-6 text-sm sm:text-base">
@@ -38,14 +38,14 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           </div>
           <div className="flex gap-3 mt-4 lg:mt-10 lg:items-start sm:gap-5 flex-col sm:flex-row ">
             <Button onClick={HandleContact} className="w-max">
-              Entre em contato
+              Mande uma mensagem
               <HiArrowNarrowRight size={18} />
             </Button>
-            <div className="flex w-fit items-center h-12 gap-3 text-gray-600 rounded-lg border border-[#1bc6c6] px-2">
+            <div className="flex w-fit items-center h-12 gap-3 text-gray-600 rounded-lg bg-[#179f91] px-4 py-3">
               <span className="text-gray-50">Siga-me nas redes sociais:</span>
               {homeInfo.socials.map((contact, index) => (
                 <a
-                  className="hover:text-gray-100 transition-colors"
+                  className="text-neutral-100 hover:text-neutral-700 transition-colors"
                   href={contact.url}
                   key={`contact-${index}`}
                   target="_blank"
