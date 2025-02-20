@@ -48,7 +48,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
       <div>
         <div className="flex flex-col gap-2 text-sm sm:text-base">
           <a
-            className="text-neutral-500 hover:text-[#4894ff] transition-colors"
+            className="text-neutral-500 hover:text-[#1effff] transition-colors"
             href={experience.companyUrl}
             target="_blank"
           >
