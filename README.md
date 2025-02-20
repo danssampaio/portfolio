@@ -15,27 +15,6 @@ O portfólio está disponível online através do Vercel no seguinte endereço:
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 - ![Hygraph](https://img.shields.io/badge/Hygraph-5C2D91?style=for-the-badge&logo=hygraph&logoColor=white)
 
-## 🚀 Como Executar Localmente
-
-Caso queira rodar o projeto localmente, siga os passos abaixo:
-
-```sh
-# Clone este repositório
-git clone https://github.com/seu-usuario/portfolio.git
-
-# Acesse a pasta do projeto
-cd portfolio
-
-# Instale as dependências
-npm install
-
-# Inicie o servidor de desenvolvimento
-npm run dev
-```
-
-Acesse o projeto no navegador pelo endereço `http://localhost:3000` (ou a porta correspondente).
-
-## 📬 Contato
 
 Caso queira entrar em contato comigo, fique à vontade para me chamar através das redes sociais, e-mail ou mandando uma mensagem através do meu portfólio.
 
