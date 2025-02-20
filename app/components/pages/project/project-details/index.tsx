@@ -15,6 +15,8 @@ type ProjectDetailsProps = {
 };
 
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+  const urls = project.githubUrl?.split(",").map((url) => url.trim());
+
   return (
     <section
       className="w-full sm:min-h-[750px] flex flex-col items-center justify-center
@@ -39,13 +41,29 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         ))}
       </div>
       <div className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row">
-        {project?.githubUrl && (
+        {urls?.length === 1 && (
           <a href={project.githubUrl} target="_blank">
             <Button className="max-w-[180px]">
               <TbBrandGithub size={20} />
               Repositório
             </Button>
           </a>
+        )}
+        {urls?.length === 2 && (
+          <>
+            <a href={urls[0]} target="_blank">
+              <Button className="max-w-[180px]">
+                <TbBrandGithub size={20} />
+                Frontend
+              </Button>
+            </a>
+            <a href={urls[1]} target="_blank">
+              <Button className="max-w-[180px]">
+                <TbBrandGithub size={20} />
+                Backend
+              </Button>
+            </a>
+          </>
         )}
         {project?.liveProjectUrl && (
           <a href={project.liveProjectUrl} target="_blank">
