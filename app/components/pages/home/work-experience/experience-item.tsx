@@ -6,6 +6,7 @@ import { WorkExperience } from "@/app/types/work-experience";
 import { differenceInMonths, differenceInYears, format } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
 import Image from "next/image";
+import Link from "next/link";
 
 type ExperienceItemProps = {
   experience: WorkExperience;
@@ -36,12 +37,14 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-neutral-500 p-0.5">
-          <Image
-            src={experience.companyLogo.url}
-            width={40}
-            height={40}
-            alt={`Logo da empresa ${experience.companyName}`}
-          />
+          <Link href={experience.companyUrl} target="_blank">
+            <Image
+              src={experience.companyLogo.url}
+              width={40}
+              height={40}
+              alt={`Logo da empresa ${experience.companyName}`}
+            />
+          </Link>
         </div>
         <div className="h-full w-[2px] bg-neutral-600"></div>
       </div>
@@ -64,7 +67,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
           </div>
         </div>
         <p className="text-neutral-400 text-sm mb-3 mt-6 font-semibold">
-          Competências
+          Tecnologias
         </p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[450px] mb-8">
           {experience.technologies.map((tech) => (

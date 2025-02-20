@@ -20,7 +20,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <section
       className="w-full sm:min-h-[750px] flex flex-col items-center justify-center
-     relative pb-10 sm:pb-24 py-24 px-6 overflow-hidden"
+     relative pb-10 sm:pb-24 py-32 px-6 overflow-hidden"
     >
       <div
         className="absolute inset-0 z-[-1]"

@@ -24,8 +24,8 @@ export const NavItem = ({ label, href }: NavItemProps) => {
     <Link
       href={href}
       className={cn(
-        "text-neutral-400 flex row-auto items-center gap-2 font-medium font-mono hover:text-neutral-200 ",
-        isActive && "text-[#1effff]"
+        "text-neutral-400 flex row-auto items-center gap-2 font-medium font-mono hover:text-neutral-200",
+        isActive && "text-[#1effff] text-xl"
       )}
     >
       {label}

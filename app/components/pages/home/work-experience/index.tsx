@@ -14,7 +14,7 @@ export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
           title="Experiência Profissional"
         />
         <p className="text-neutral-400 mt-6 text-justify">
-          Sou um desenvolvedor full stack com maior experiência (e gosto) no
+          Sou um desenvolvedor full stack com maior experiência (e preferência) no
           frontend, tendo atuado em projetos institucionais, acadêmicos e
           corporativos. Já trabalhei com desenvolvimento de interfaces,
           integração com APIs RESTful e modelagem de banco de dados. Possuo
