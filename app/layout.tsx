@@ -5,6 +5,7 @@ import { Contact } from "./components/contact";
 import { Footer } from "./components/footer";
 import { BackToTop } from "./components/back-to-top";
 import { Toaster } from "./components/toaster";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: {
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Contact />
         <Footer />
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
