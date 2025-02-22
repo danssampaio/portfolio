@@ -19,7 +19,7 @@ export const KnowTech = ({ tech }: KnowTechProps) => {
         <p className="font-medium">{tech.name}</p>
         <CMSIcon icon={tech.iconSvg} />
       </div>
-      <span>{tech.experienceTime ?? "Carregando..."}</span>
+{/*       <span>{tech.experienceTime ?? "Carregando..."}</span> */}
     </Link>
   );
 };
