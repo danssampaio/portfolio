@@ -47,7 +47,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
 
   return (
     <section className="w-full lg:h-[700px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
-      <div className="container flex items-center justify-center gap-40 lg:flex-row">
+      <div className="container flex items-center justify-center gap-40 flex-col lg:gap-40 lg:flex-row">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
