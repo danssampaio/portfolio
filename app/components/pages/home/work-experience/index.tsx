@@ -1,6 +1,9 @@
+"use client";
+
 import { SectionTitle } from "@/app/components/section-title";
 import { ExperienceItem } from "./experience-item";
 import { WorkExperience as IWorkExperience } from "@/app/types/work-experience";
+import { motion } from "framer-motion";
 
 type WorkExperienceProps = {
   experiences: IWorkExperience[];
@@ -8,14 +11,18 @@ type WorkExperienceProps = {
 
 export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
   return (
-    <section className="container flex flex-col md:flex-row py-16 gap-10 md:gap-4 lg:gap-16">
+    <motion.section
+      className="container flex flex-col md:flex-row py-16 gap-10 md:gap-4 lg:gap-16"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className="max-w-[420px]">
-        <SectionTitle
-          title="Experiência Profissional"
-        />
+        <SectionTitle title="Experiência Profissional" />
         <p className="text-neutral-400 mt-6 text-justify">
-          Sou um desenvolvedor full stack com maior experiência (e preferência) no
-          frontend, tendo atuado em projetos institucionais, acadêmicos e
+          Sou um desenvolvedor full stack com maior experiência (e preferência)
+          no frontend, tendo atuado em projetos institucionais, acadêmicos e
           corporativos. Já trabalhei com desenvolvimento de interfaces,
           integração com APIs RESTful e modelagem de banco de dados. Possuo
           conhecimentos em tecnologias como HTML, CSS, JavaScript, TypeScript,
@@ -27,12 +34,17 @@ export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
       </div>
       <div className="flex flex-col gap-4">
         {experiences?.map((experience) => (
-          <ExperienceItem
+          <motion.div
             key={experience.companyName}
-            experience={experience}
-          />
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <ExperienceItem experience={experience} />
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };

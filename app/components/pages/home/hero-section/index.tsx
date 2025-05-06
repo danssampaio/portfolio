@@ -47,7 +47,13 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
 
   return (
     <section className="w-full lg:h-[700px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
-      <div className="container flex items-center justify-center gap-40 flex-col lg:gap-40 lg:flex-row">
+      <motion.div
+        className="container flex items-center justify-center gap-40 flex-col lg:gap-40 lg:flex-row"
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -139,7 +145,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

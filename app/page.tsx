@@ -66,10 +66,12 @@ export default async function Home() {
   const { page: pageData, workExperiences } = await getPageData();
   return (
     <>
-      <HeroSection homeInfo={pageData} />
-      <KnowTechs techs={pageData.knownTechs} />
-      <HighlightedProjects projects={pageData.highlightProjects} />
-      <WorkExperience experiences={workExperiences} />
+      <section className="flex flex-col gap-11">
+        <HeroSection homeInfo={pageData} />
+        <KnowTechs techs={pageData.knownTechs} />
+        <HighlightedProjects projects={pageData.highlightProjects} />
+        <WorkExperience experiences={workExperiences} />
+      </section>
     </>
   );
 }

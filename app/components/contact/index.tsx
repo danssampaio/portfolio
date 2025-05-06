@@ -8,6 +8,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { motion } from "motion/react";
 
 const contactFormSchema = z.object({
   name: z
@@ -37,7 +38,9 @@ export const Contact = () => {
     try {
       await axios.post("/api/contact", data);
       reset();
-      return toast.success("Mensagem enviada com sucesso!!\nResponderei o mais breve possível.");
+      return toast.success(
+        "Mensagem enviada com sucesso!!\nResponderei o mais breve possível."
+      );
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         const { status, data } = error.response;
@@ -55,9 +58,13 @@ export const Contact = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="contact"
       className="container py-16 px-6 md:py-34 flex items-center justify-center bg-neutral-850"
+      initial={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <div className="w-full max-w-[620px] mx-auto">
         <SectionTitle
@@ -70,7 +77,12 @@ export const Contact = () => {
           onSubmit={handleSubmit(submitForm)}
         >
           <div className="sm:grid sm:grid-cols-2 flex flex-col gap-3">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+            >
               <input
                 placeholder="Nome"
                 className="w-full h-14 bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
@@ -81,8 +93,13 @@ export const Contact = () => {
                   {errors.name.message}
                 </p>
               )}
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              transition={{ duration: 1 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+            >
               <input
                 type="email"
                 placeholder="Email"
@@ -94,12 +111,16 @@ export const Contact = () => {
                   {errors.email.message}
                 </p>
               )}
-            </div>
+            </motion.div>
           </div>
-          <textarea
+          <motion.textarea
             placeholder="Mensagem"
             className="resize-none w-full h-[138px] bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
             maxLength={500}
+            initial={{ opacity: 0, y: 100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
             {...register("message")}
           />
           {errors.message && (
@@ -107,12 +128,19 @@ export const Contact = () => {
               {errors.message.message}
             </p>
           )}
-          <Button className="h-max mx-auto mt-6" disabled={isSubmitting}>
-            Enviar Mensagem
-            <HiArrowNarrowRight size={18} />
-          </Button>
+          <motion.div
+            initial={{ opacity: 0, y:   100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <Button className="h-max mx-auto mt-6" disabled={isSubmitting}>
+              Enviar Mensagem
+              <HiArrowNarrowRight size={18} />
+            </Button>
+          </motion.div>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 };
