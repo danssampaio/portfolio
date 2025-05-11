@@ -9,7 +9,7 @@ type ProjectsProps = {
   projects: Project[];
 };
 
-export const ProjectsList = ({ projects }: ProjectsProps) => {
+const ProjectsList = ({ projects }: ProjectsProps) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.section
@@ -28,3 +28,5 @@ export const ProjectsList = ({ projects }: ProjectsProps) => {
     </LazyMotion>
   );
 };
+
+export default ProjectsList;
