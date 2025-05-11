@@ -1,9 +1,6 @@
-import { HeroSection } from "./components/pages/home/hero-section";
-import { HighlightedProjects } from "./components/pages/home/highlighted-projects";
-import { KnowTechs } from "./components/pages/home/know-techs";
-import { WorkExperience } from "./components/pages/home/work-experience";
 import { HomePageData } from "./types/pages-info";
 import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
+import { lazy, Suspense } from "react";
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -62,14 +59,33 @@ const getPageData = async (): Promise<HomePageData> => {
   return fetchHygraphQuery(query, 60 * 60 * 24);
 };
 
+const HeroSection = lazy(() => import("./components/pages/home/hero-section"));
+const KnowTechs = lazy(() => import("./components/pages/home/know-techs"));
+const HighlightedProjects = lazy(
+  () => import("./components/pages/home/highlighted-projects")
+);
+const WorkExperience = lazy(
+  () => import("./components/pages/home/work-experience")
+);
+
 export default async function Home() {
   const { page: pageData, workExperiences } = await getPageData();
   return (
     <>
-      <HeroSection homeInfo={pageData} />
-      <KnowTechs techs={pageData.knownTechs} />
-      <HighlightedProjects projects={pageData.highlightProjects} />
-      <WorkExperience experiences={workExperiences} />
+      <section className="flex flex-col gap-11">
+        <Suspense fallback={<p>Carregando página...</p>}>
+          <HeroSection homeInfo={pageData} />
+        </Suspense>
+        <Suspense fallback={<p>Carregando página...</p>}>
+          <KnowTechs techs={pageData.knownTechs} />
+        </Suspense>
+        <Suspense fallback={<p>Carregando página...</p>}>
+          <HighlightedProjects projects={pageData.highlightProjects} />
+        </Suspense>
+        <Suspense fallback={<p>Carregando página...</p>}>
+          <WorkExperience experiences={workExperiences} />
+        </Suspense>
+      </section>
     </>
   );
 }

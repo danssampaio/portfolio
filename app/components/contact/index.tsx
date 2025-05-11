@@ -8,6 +8,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { LazyMotion, domAnimation } from "motion/react";
+import * as m from "motion/react-m";
 
 const contactFormSchema = z.object({
   name: z
@@ -37,7 +39,9 @@ export const Contact = () => {
     try {
       await axios.post("/api/contact", data);
       reset();
-      return toast.success("Mensagem enviada com sucesso!!\nResponderei o mais breve possível.");
+      return toast.success(
+        "Mensagem enviada com sucesso!!\nResponderei o mais breve possível."
+      );
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         const { status, data } = error.response;
@@ -55,64 +59,96 @@ export const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="container py-16 px-6 md:py-34 flex items-center justify-center bg-neutral-850"
-    >
-      <div className="w-full max-w-[620px] mx-auto">
-        <SectionTitle
-          className="items-center text-center"
-          title="Entre em contato"
-        />
-
-        <form
-          className="mt-12 w-full flex flex-col gap-4"
-          onSubmit={handleSubmit(submitForm)}
-        >
-          <div className="sm:grid sm:grid-cols-2 flex flex-col gap-3">
-            <div>
-              <input
-                placeholder="Nome"
-                className="w-full h-14 bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
-                {...register("name")}
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.name.message}
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full h-14 bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
-                {...register("email")}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <textarea
-            placeholder="Mensagem"
-            className="resize-none w-full h-[138px] bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
-            maxLength={500}
-            {...register("message")}
+    <LazyMotion features={domAnimation}>
+      <m.section
+        id="contact"
+        className="container py-16 px-6 md:py-34 flex items-center justify-center bg-neutral-850"
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="w-full max-w-[620px] mx-auto">
+          <SectionTitle
+            className="items-center text-center"
+            title="Entre em contato"
           />
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.message.message}
-            </p>
-          )}
-          <Button className="h-max mx-auto mt-6" disabled={isSubmitting}>
-            Enviar Mensagem
-            <HiArrowNarrowRight size={18} />
-          </Button>
-        </form>
-      </div>
-    </section>
+
+          <form
+            className="mt-12 w-full flex flex-col gap-4"
+            onSubmit={handleSubmit(submitForm)}
+          >
+            <div className="sm:grid sm:grid-cols-2 flex flex-col gap-3">
+              <m.div
+                initial={{ opacity: 0, x: -100 }}
+                transition={{ duration: 1 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                viewport={{ once: true }}
+              >
+                <input
+                  placeholder="Nome"
+                  className="w-full h-14 bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
+                  {...register("name")}
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
+              </m.div>
+              <m.div
+                initial={{ opacity: 0, x: 100 }}
+                transition={{ duration: 1 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                viewport={{ once: true }}
+              >
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full h-14 bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
+                  {...register("email")}
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </m.div>
+            </div>
+            <m.textarea
+              placeholder="Mensagem"
+              className="resize-none w-full h-[138px] bg-neutral-800 rounded-lg placeholder:text-neutral-400 text-neutral-50 p-4 focus:outline focus:ring-4 focus:ring-[#1effff]"
+              maxLength={500}
+              initial={{ opacity: 0, y: 100 }}
+              transition={{ duration: 1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              viewport={{ once: true }}
+              {...register("message")}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.message.message}
+              </p>
+            )}
+            <m.div
+              initial={{ opacity: 0, y: 100 }}
+              transition={{ duration: 1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              viewport={{ once: true }}
+            >
+              <Button className="h-max mx-auto mt-6" disabled={isSubmitting}>
+                Enviar Mensagem
+                <HiArrowNarrowRight size={18} />
+              </Button>
+            </m.div>
+          </form>
+        </div>
+      </m.section>
+    </LazyMotion>
   );
 };
