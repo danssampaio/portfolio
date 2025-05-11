@@ -20,6 +20,7 @@ const KnowTechs = ({ techs }: KnownTechsProps) => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}
+        viewport={{ once: true }}
       >
         <m.div
           className="text-gray-400 text-justify my-6 text-sm sm:text-base"
@@ -39,6 +40,7 @@ const KnowTechs = ({ techs }: KnownTechsProps) => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
               whileHover={{ scale: 1.1 }}
+              viewport={{ once: true }}
             >
               <KnowTech tech={tech} />
             </m.div>

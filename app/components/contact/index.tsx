@@ -67,6 +67,7 @@ export const Contact = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        viewport={{ once: true }}
       >
         <div className="w-full max-w-[620px] mx-auto">
           <SectionTitle
@@ -84,6 +85,7 @@ export const Contact = () => {
                 transition={{ duration: 1 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0 }}
+                viewport={{ once: true }}
               >
                 <input
                   placeholder="Nome"
@@ -101,6 +103,7 @@ export const Contact = () => {
                 transition={{ duration: 1 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0 }}
+                viewport={{ once: true }}
               >
                 <input
                   type="email"
@@ -123,6 +126,7 @@ export const Contact = () => {
               transition={{ duration: 1 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
+              viewport={{ once: true }}
               {...register("message")}
             />
             {errors.message && (
@@ -135,6 +139,7 @@ export const Contact = () => {
               transition={{ duration: 1 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
+              viewport={{ once: true }}
             >
               <Button className="h-max mx-auto mt-6" disabled={isSubmitting}>
                 Enviar Mensagem

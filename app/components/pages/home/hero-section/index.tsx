@@ -55,6 +55,7 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           transition={{ duration: 1 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
+          viewport={{once:true}}
         >
           <m.div
             initial={{ opacity: 0, scale: 0.5 }}

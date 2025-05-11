@@ -21,6 +21,7 @@ const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         <m.div
           className="text-gray-400 text-justify my-6 text-sm sm:text-base"
@@ -40,6 +41,7 @@ const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
             >
               <ProjectCard project={project} />
               <HorizontalDivider className="my-16" />
@@ -57,6 +59,5 @@ const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
     </LazyMotion>
   );
 };
-
 
 export default HighlightedProjects;

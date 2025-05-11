@@ -18,6 +18,7 @@ const WorkExperience = ({ experiences }: WorkExperienceProps) => {
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         <div className="max-w-[420px]">
           <SectionTitle title="Experiência Profissional" />
@@ -41,6 +42,7 @@ const WorkExperience = ({ experiences }: WorkExperienceProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
             >
               <ExperienceItem experience={experience} />
             </m.div>
