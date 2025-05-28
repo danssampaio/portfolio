@@ -31,9 +31,10 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         viewport={{ once: true }}
       >
         <div
-          className="absolute inset-0 z-[-1]"
+          className="absolute inset-0 z-[-1] bg-cover bg-center bg-fixed opacity-5"
           style={{
-            background: `url(/images/hero-bg.png) no-repeat center/cover fixed, url(${project.thumbnail.url}) no-repeat center/cover`,
+            backgroundImage: `url(/images/hero-bg.png), url(${project.thumbnail.url})`,
+            backgroundBlendMode: "normal",
           }}
         />
         <SectionTitle

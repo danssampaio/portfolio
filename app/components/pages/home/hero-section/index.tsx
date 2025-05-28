@@ -55,17 +55,14 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           transition={{ duration: 1 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <m.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
-              duration: 1.8,
+              duration: 1,
               ease: [0, 0.71, 0.2, 1.01],
-            }}
-            whileHover={{
-              scale: 1.1,
             }}
           >
             <Image
@@ -75,6 +72,7 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
               priority
               src={homeInfo.profilePicture.url}
               alt="Minha Foto"
+              loading="eager"
             />
           </m.div>
           <div className="w-full lg:max-w-[730px] flex flex-col ">
@@ -132,14 +130,16 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
                 Mande uma mensagem
                 <HiArrowNarrowRight size={18} />
               </Button>
-              <div className="flex w-fit items-center h-12 gap-3 text-gray-600 rounded-lg bg-[#179f91] px-4 py-3">
-                <span className="text-gray-50">Siga-me nas redes sociais:</span>
+              <div className="flex w-fit items-center h-12 gap-3 text-gray-900 rounded-lg bg-[#179f91] px-4 py-3">
+                <span>Siga-me nas redes sociais:</span>
                 {homeInfo.socials.map((contact, index) => (
                   <a
-                    className="text-neutral-100 hover:text-neutral-700 transition-colors"
+                    className="hover:text-neutral-100 transition-colors"
                     href={contact.url}
                     key={`contact-${index}`}
                     target="_blank"
+                    aria-hidden="true"
+                    aria-label={contact.ariaLabel}
                     rel="noopener noreferrer"
                   >
                     <CMSIcon icon={contact.iconSvg} />

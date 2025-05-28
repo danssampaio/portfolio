@@ -5,20 +5,21 @@ import { Contact } from "./components/contact";
 import { Footer } from "./components/footer";
 import { BackToTop } from "./components/back-to-top";
 import { Toaster } from "./components/toaster";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
     default: "Home",
     template: "%s | <DS/>",
   },
+  description:
+    "Meu portfólio com foco em projetos modernos, interfaces responsivas, modernas e acessíveis.",
   icons: [
     {
       url: "/favicon.svg",
     },
   ],
 };
-
 
 export default function RootLayout({
   children,
@@ -27,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`bg-hero-image bg-cover bg-fixed bg-no-repeat`}
-      >
+      <body className={`bg-hero-image bg-cover bg-fixed bg-no-repeat`}>
         <Toaster />
         <Header />
         {children}
