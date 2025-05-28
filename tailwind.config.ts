@@ -12,7 +12,8 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'hero-image': "url('/images/hero-bg.png')",
+        'hero-image': "url('/images/hero-bg.avif')",
+
       },
       fontFamily: {
         mono: ['var(--font-plex-mono)', 'monospace'],
