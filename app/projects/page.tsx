@@ -4,6 +4,8 @@ import { lazy, Suspense } from "react";
 
 export const metadata = {
   title: "Projetos",
+  description:
+    "Explore os projetos desenvolvidos, com foco em tecnologias modernas e soluções criativas para diversos desafios. Veja descrições, imagens e stacks utilizadas.",
 };
 
 const getPageData = async (): Promise<ProjectsPageData> => {
