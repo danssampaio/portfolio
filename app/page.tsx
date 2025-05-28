@@ -17,6 +17,7 @@ const getPageData = async (): Promise<HomePageData> => {
       }
       socials {
         url
+        ariaLabel
         iconSvg
       }
       knownTechs (first: 30) {
