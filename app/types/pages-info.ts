@@ -4,6 +4,7 @@ import { WorkExperience } from './work-experience'
 
 export type Social = {
   url: string
+  ariaLabel: string
   iconSvg: string
 }
 
