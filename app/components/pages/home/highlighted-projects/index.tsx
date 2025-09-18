@@ -34,7 +34,7 @@ const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
         <HorizontalDivider className="mb-16" />
 
         <div>
-          {projects?.map((project) => (
+          {projects?.map((project, index) => (
             <m.div
               key={project.slug}
               initial={{ opacity: 0, y: 50 }}
@@ -43,7 +43,7 @@ const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} reversed={index % 2 !== 0} />
               <HorizontalDivider className="my-16" />
             </m.div>
           ))}
