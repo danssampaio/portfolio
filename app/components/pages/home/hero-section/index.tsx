@@ -10,6 +10,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { LazyMotion, domAnimation } from "motion/react";
 import * as m from "motion/react-m";
+import { Dropdown } from "@/app/components/dropdown";
 
 type HomeSectionProps = {
   homeInfo: HomePageInfo;
@@ -130,6 +131,7 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
                 Mande uma mensagem
                 <HiArrowNarrowRight size={18} />
               </Button>
+
               <div className="flex w-fit items-center h-12 gap-3 text-gray-900 rounded-lg bg-[#179f91] px-4 py-3">
                 <span>Siga-me nas redes sociais:</span>
                 {homeInfo.socials.map((contact, index) => (
@@ -146,6 +148,7 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
                   </a>
                 ))}
               </div>
+              <Dropdown curriculums={homeInfo.curriculums}></Dropdown>
             </m.div>
           </div>
         </m.div>
