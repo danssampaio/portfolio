@@ -20,6 +20,11 @@ const getPageData = async (): Promise<HomePageData> => {
         ariaLabel
         iconSvg
       }
+      curriculums {
+        name
+        ariaLabel
+        url
+      }
       knownTechs (first: 30) {
         iconSvg
         name

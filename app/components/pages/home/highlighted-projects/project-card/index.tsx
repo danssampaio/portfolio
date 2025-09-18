@@ -8,11 +8,19 @@ import { Project } from "@/app/types/projects";
 
 type ProjectCardProps = {
   project: Project;
+  reversed?: boolean;
 };
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const ProjectCard = ({
+  project,
+  reversed = false,
+}: ProjectCardProps) => {
   return (
-    <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row">
+    <div
+      className={`flex gap-6 lg:gap-12 flex-col lg:flex-row ${
+        reversed ? "lg:flex-row-reverse" : ""
+      }`}
+    >
       <div className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full">
         <a href={`/projects/${project.slug}`}>
           <Image
@@ -36,7 +44,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           {project.title}
         </h3>
         <p className="text-neutral-400 my-6">{project.shortDescription}</p>
-        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
+        <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8">
           {project.technologies.map((tech) => (
             <TechBadge
               key={`${project.title}-tech-${tech.name}`}
@@ -47,7 +55,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <Link href={`/projects/${project.slug}`}>
           Ver Projeto
           <HiArrowNarrowRight />
-        </Link>
+        </Link> 
       </div>
     </div>
   );

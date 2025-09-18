@@ -8,6 +8,12 @@ export type Social = {
   iconSvg: string
 }
 
+export type Curriculum = {
+  name: string
+  ariaLabel: string
+  url: string
+}
+
 export type HomePageInfo = {
   introduction: {
     raw: RichTextContent
@@ -17,6 +23,7 @@ export type HomePageInfo = {
     url: string
   }
   socials: Social[]
+  curriculums: Curriculum[]
   knownTechs: KnownTech[]
   highlightProjects: Project[]
 }
