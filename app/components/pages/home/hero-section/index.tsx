@@ -51,7 +51,7 @@ const HeroSection = ({ homeInfo }: HomeSectionProps) => {
     <section className="w-full lg:h-[700px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <LazyMotion features={domAnimation}>
         <m.div
-          className="container flex items-center justify-center gap-40 flex-col lg:gap-40 lg:flex-row"
+          className="container flex items-center justify-center flex-col lg:gap-40 lg:flex-row"
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 1 }}
           whileInView={{ opacity: 1, y: 0 }}
